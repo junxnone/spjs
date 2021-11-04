@@ -8,20 +8,6 @@ window.addEventListener("load", function(evt) {
     vt = new VT100(80, 24, "term");
     vt.clear();
     vt.refresh();
-    vt.write(
-"\n\n\n" +
-" * This javascript terminal window is 80x24 characters, so it might be\n" +
-"   best to adjust your terminal window to that size as well using the\n" +
-"   following to check:\n" +
-"      $ watch \"tput cols; tput lines\"\n" +
-" * Start recording:\n" +
-"      $ SHELL=/bin/sh TERM=vt100 script -t typescript 2> timingfile\n" +
-" * Do your stuff and when done exit script with `exit`, `logout` or\n" +
-"   ctrl-d.\n" +
-" * To test how your recorded session looks like, use:\n" +
-"      $ scriptreplay timingfile typescript\n" +
-" * Enter `timingfile` and `typescript` into form above and hit the play\n" +
-"   button.\n");
     document.getElementById("stop").addEventListener("click", stop, false);
     document.getElementById("speed").addEventListener('change', set_speed, false);
     document.getElementById("fontsize").addEventListener('change', set_fontsize, false);
@@ -39,12 +25,6 @@ window.addEventListener("load", function(evt) {
 <legend>file input</legend>
 typescript: <input type="file" id="typescript" name="typescript" /><br />
 timingfile: <input type="file" id="timingfile" name="typescript" /><br />
-</fieldset>
-<fieldset>
-<legend>samples</legend>
-<ul id="sample">
-<li><a href="javascript:void()" id="sample_test">test</a></li>
-</ul>
 </fieldset>
 
 <tt><pre id=term></pre></tt>
