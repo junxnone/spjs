@@ -27,8 +27,12 @@ window.addEventListener("load", function(evt) {
     document.getElementById("fontsize").addEventListener('change', set_fontsize, false);
     document.getElementById("play").addEventListener("click", play, false);
 
-    play_file("test");
-
+    for (var i = 0; i < samples.length; i++) {
+      samples[i].addEventListener('click', function(evt) {
+          play_file(”test“);
+      }, false);
+    }
+    }, false);
 --></script>
 </head>
 
